@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:form.ViewModel"
+             x:Class="form.FormOsoby">
+
+    <ContentPage.BindingContext>
+        <vm:PersonViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="20">
+
+        <Label Text="Imię i nazwisko:" />
+        <Entry Text="{Binding ImieINazwisko}" Placeholder="Wpisz imię i nazwisko"/>
+
+        <Label Text="Wiek:" />
+        <Entry Text="{Binding Wiek}" Placeholder="Wpisz wiek" Keyboard="Numeric"/>
+
+        <Label Text="Adres:" />
+        <Editor Text="{Binding Adres}" Placeholder="Wpisz adres" HeightRequest="100"/>
+
+        <Label Text="Kontakt:" />
+        <Entry Text="{Binding Kontakt}" Placeholder="Wpisz dane kontaktowe"/>
+
+        <Button Text="Zapisz dane" Command="{Binding ZapiszCommand}" />
+
+        <BoxView HeightRequest="2" Color="Black" Margin="0,10,0,10" />
+        <Label Text="Wprowadzone dane:" FontAttributes="Bold" />
+        <Label Text="{Binding ImieINazwisko}" />
+        <Label Text="{Binding Wiek, StringFormat='Wiek: {0}'}" />
+        <Label Text="{Binding Adres}" />
+        <Label Text="{Binding Kontakt}" />
+
+    </StackLayout>
+</ContentPage>
